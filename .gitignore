@@ -1,0 +1,29 @@
+# Dados locais: planilhas de entrada, banco e saídas
+data/
+output/
+demo_output/
+*.db
+*.db-wal
+*.db-shm
+*.xlsx
+*.csv
+
+# Configuração real. Use config.example.json como base.
+config.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# Editores e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

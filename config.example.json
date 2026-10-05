@@ -1,0 +1,46 @@
+{
+  "paths": {
+    "bookings_dir": "data/bookings",
+    "consolidated_workbook": "data/bookings_consolidated.xlsx",
+    "bookings_workbook": "data/bookings.xlsx",
+    "revenue_workbook": "data/revenue.xlsx",
+    "database": "data/staffing.db",
+    "dashboard": "output/dashboard.html"
+  },
+  "bookings": {
+    "sheet": "BD",
+    "store_mapping_sheet": "MapeamentoLojas",
+    "headcount_sheet": "QuadroCLT",
+    "state": "SP",
+    "max_future_months": 2,
+    "exclude_store_patterns": ["BALCAO"]
+  },
+  "revenue": {
+    "sheet": "BD",
+    "store_mapping_sheet": "Lojas",
+    "sales_operation_codes": [100, 101, 102, 110],
+    "return_operation_codes": [190],
+    "excluded_clients": ["CONSUMIDOR FINAL - AUTOATENDIMENTO"],
+    "exclude_store_patterns": ["BALCAO"],
+    "ignored_stores": ["99.GALPAO"],
+    "store_aliases": {
+      "03.LJ SUL NOVO": "Loja Sul"
+    }
+  },
+  "labor": {
+    "permanent_role": "Empacotador",
+    "permanent_monthly_cost": 2500.0,
+    "monthly_hours": 220,
+    "on_demand_max_hours": 44,
+    "evaluate_threshold_hours": 150,
+    "hire_cost_ratio": 0.85,
+    "recurrence_warning_days": 3,
+    "recurrence_critical_days": 4
+  },
+  "dashboard": {
+    "title": "Mão de obra sob demanda",
+    "subtitle": "Custo de prestadores versus faturamento por loja",
+    "brand": "Minha Empresa",
+    "logo": null
+  }
+}

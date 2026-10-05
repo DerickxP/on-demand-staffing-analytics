@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>__TITLE__</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+__STYLES__
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-left">
+    <div class="logo">__LOGO__</div>
+    <div>
+      <h1>__TITLE__</h1>
+      <div class="hdr-sub">__SUBTITLE__</div>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <button id="theme-toggle" class="btn-theme" title="Alternar tema" type="button">
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+    <div class="pill-live">__BRAND__</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <aside class="sidebar">
+    <div class="sb-hdr">
+      <span class="sb-title">Filtros</span>
+      <button class="btn-clear" id="btn-clear" type="button">Limpar tudo</button>
+    </div>
+    <div class="sb-body" id="sidebar-groups"></div>
+  </aside>
+
+  <main class="main">
+
+    <nav class="tabs" id="tabs">
+      <button class="tab-btn active" type="button" data-view="overview">Visão geral</button>
+      <button class="tab-btn" type="button" data-view="hourly">Receita × custo por hora</button>
+      <button class="tab-btn" type="button" data-view="workforce">Análise de pessoal</button>
+      <button class="tab-btn" type="button" data-view="recurrence">Risco de recorrência</button>
+      <button class="tab-btn" type="button" data-view="compare">Comparativo</button>
+    </nav>
+
+    <div class="af" id="af">
+      <span class="af-lbl">Ativos:</span>
+      <span class="af-none" id="af-none">Nenhum filtro aplicado</span>
+    </div>
+
+    <div class="no-data" id="no-data">Nenhum agendamento encontrado para os filtros selecionados.</div>
+
+    <section class="view" id="view-overview">
+      <div class="kpis">
+        <div class="kpi"><div class="kpi-val" id="k_cost">—</div><div class="kpi-lbl">Custo sob demanda</div></div>
+        <div class="kpi"><div class="kpi-val" id="k_hours">—</div><div class="kpi-lbl">Horas computadas</div></div>
+        <div class="kpi"><div class="kpi-val" id="k_count">—</div><div class="kpi-lbl">Agendamentos</div></div>
+        <div class="kpi"><div class="kpi-val" id="k_ticket">—</div><div class="kpi-lbl">Custo médio por agendamento</div></div>
+        <div class="kpi"><div class="kpi-val" id="k_share">—</div><div class="kpi-lbl">Custo / faturamento</div></div>
+      </div>
+
+      <div class="row2">
+        <div class="card"><div class="card-hdr"><span class="card-t">Custo por loja</span><span class="card-h">Com % sobre o faturamento da loja</span></div><div id="c_store_cost"></div></div>
+        <div class="card"><div class="card-hdr"><span class="card-t">Horas por loja</span><span class="card-h">Clique para filtrar</span></div><div id="c_store_hours"></div></div>
+      </div>
+      <div class="row2">
+        <div class="card"><div class="card-hdr"><span class="card-t">Agendamentos por dia da semana</span><span class="card-h">Clique para filtrar</span></div><div id="c_weekday"></div></div>
+        <div class="card"><div class="card-hdr"><span class="card-t">Custo por turno</span><span class="card-h">Distribuído hora a hora pela duração</span></div><div id="c_shift"></div></div>
+      </div>
+      <div class="row2">
+        <div class="card"><div class="card-hdr"><span class="card-t">Custo por função</span><span class="card-h">Clique para filtrar</span></div><div id="c_role_cost"></div></div>
+        <div class="card"><div class="card-hdr"><span class="card-t">Horas por função</span><span class="card-h">Clique para filtrar</span></div><div id="c_role_hours"></div></div>
+      </div>
+      <div class="row2">
+        <div class="card"><div class="card-hdr"><span class="card-t">Custo por mês</span><span class="card-h">Clique para filtrar</span></div><div id="c_month"></div></div>
+        <div class="card"><div class="card-hdr"><span class="card-t">Agendamentos recentes</span><span class="card-h">Até 50 dentro dos filtros</span></div><div id="t_recent" class="tw"></div></div>
+      </div>
+    </section>
+
+    <section class="view hidden" id="view-hourly">
+      <div class="card">
+        <div class="card-hdr"><span class="card-t">Faturamento versus custo por faixa horária</span><span class="card-h">Custo distribuído hora a hora pela duração de cada agendamento</span></div>
+        <div id="c_hourly"></div>
+      </div>
+    </section>
+
+    <section class="view hidden" id="view-workforce">
+      <div class="card">
+        <div class="card-hdr"><span class="card-t">Despesa de pessoal por loja: efetivos + sob demanda</span><span class="card-h" id="workforce-hint"></span></div>
+        <div id="c_workforce"></div>
+      </div>
+    </section>
+
+    <section class="view hidden" id="view-recurrence">
+      <div class="card">
+        <div class="card-hdr"><span class="card-t">Frequência semanal por prestador</span><span class="card-h" id="recurrence-hint"></span></div>
+        <div id="c_recurrence"></div>
+      </div>
+    </section>
+
+    <section class="view hidden" id="view-compare">
+      <div class="card">
+        <div class="card-hdr"><span class="card-t">Comparativo entre períodos ou categorias</span><span class="card-h">Selecione duas ou mais opções de um mesmo filtro</span></div>
+        <div id="c_compare"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div id="modal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <div class="modal-hdr"><div id="modal-title"></div><button class="btn-close" id="modal-close" type="button">×</button></div>
+    <div id="modal-body" class="modal-body"></div>
+  </div>
+</div>
+
+<script>
+window.LABOR = __LABOR_JSON__;
+window.HEADCOUNT = __HEADCOUNT_JSON__;
+window.REVENUE_DATA = __REVENUE_JSON__;
+window.BOOKINGS_DATA = __BOOKINGS_JSON__;
+</script>
+<script>
+__SCRIPT__
+</script>
+</body>
+</html>
