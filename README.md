@@ -12,9 +12,9 @@ SQLite e gera um **dashboard de cinco visões em um único arquivo HTML**: custo
 e por turno, receita versus custo hora a hora, análise de pessoal com sugestão de
 contratação, risco de recorrência de prestadores e comparativo entre períodos.
 
-> Reconstrução, com dados sintéticos, de uma solução que desenvolvi em contexto
-> corporativo para uma rede varejista. Nenhum dado real, nome de empresa, loja,
-> prestador ou regra interna faz parte do código ou do histórico. A demonstração roda
+> Projeto de portfólio sobre um cenário hipotético: uma rede varejista fictícia que
+> contrata mão de obra por hora. Todos os dados, lojas, prestadores e regras são
+> sintéticos e gerados pelo próprio projeto. A demonstração roda
 > inteira sem nenhuma fonte externa.
 
 ![Dashboard gerado a partir de dados sintéticos: custo por loja com participação na receita, turnos, funções e agendamentos](docs/dashboard.png)
