@@ -6,6 +6,8 @@
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?logo=sqlite&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+**[▶ Ver o dashboard ao vivo](https://derickxp.github.io/on-demand-staffing-analytics/)**, gerado pelo GitHub Actions a partir dos dados sintéticos da demo.
+
 Pipeline que **consolida os agendamentos de trabalhadores sob demanda** (plataforma de
 mão de obra por hora) com o **faturamento por loja exportado do ERP**, grava tudo em
 SQLite e gera um **dashboard de cinco visões em um único arquivo HTML**: custo por loja
